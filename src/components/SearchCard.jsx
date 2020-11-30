@@ -11,6 +11,9 @@ const styles = {
     width: '200px',
     height: '200px',
   },
+  img: {
+    height: '-webkit-fill-available',
+  },
 };
 
 export default class Search extends React.PureComponent {
@@ -28,7 +31,7 @@ export default class Search extends React.PureComponent {
           }}
         >
           <div style={styles.avatar}>
-            <img src={photoUrl} alt="potential date"></img>
+            <img style={styles.img} src={photoUrl} alt="potential date"></img>
             <div
               style={{
                 position: 'absolute',
@@ -49,7 +52,7 @@ export default class Search extends React.PureComponent {
               >
                 <div
                   style={{
-                    color: 'white',
+                    color: '#ff61b8',
                     display: 'flex',
                     flexDirection: 'column',
                     width: '100%',

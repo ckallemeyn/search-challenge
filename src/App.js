@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchPage from './components/SearchPage';
 import ProfilesContextProvider from './components/ProfilesContextProvider';
+import { extendProfiles } from './helpers/profileHelpers';
 // import fetchJsonp from 'fetch-jsonp';
 import './styles.css';
 
@@ -25,7 +26,9 @@ function App() {
       .then((res) => res.json())
       .then(({ data }) => {
         console.log('characters from dummyAPI', data);
-        setDummyProfiles(data);
+        const profileData = extendProfiles(data);
+        console.log('here is the profile Data after extending:', profileData);
+        // setDummyProfiles(data);
       })
       .catch((error) => console.error('unable to fetch characters', error));
   }, []);

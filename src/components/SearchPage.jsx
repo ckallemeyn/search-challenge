@@ -16,7 +16,7 @@ class SearchPage extends React.Component {
   };
 
   render() {
-    const { profiles = [] } = this.context;
+    const { profiles = [], dummyProfiles } = this.context;
 
     return (
       <React.Fragment>
@@ -44,7 +44,7 @@ class SearchPage extends React.Component {
               gridGap: '16px',
             }}
           >
-            {profiles.map((profile) => (
+            {/* {profiles.map((profile) => (
               <SearchCard
                 key={profile.id}
                 photoUrl={profile.photoUrl}
@@ -53,10 +53,10 @@ class SearchPage extends React.Component {
                 age={profile.age}
                 photoCount={profile.photoCount}
               />
+            ))} */}
+            {dummyProfiles.map((profile) => (
+              <SearchCard key={profile.id} photoUrl={profile.picture} handle={profile.firstName} />
             ))}
-            {/* {dummyProfiles.map((profile) => {
-              return <SearchCard key={profile.id} photoUrl={profile.picture} />;
-            })} */}
           </div>
         </main>
       </React.Fragment>
